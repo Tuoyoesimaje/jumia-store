@@ -45,7 +45,7 @@ function FlashSaleTimer({ price, discount, stock }){
     <div className="flashsaletimer">
       <div className="fsHeader">
         <div className="fsNametag">
-          <img src="/src/assets/tag.png" alt="tag" className='icons'/>
+          <img src="/tag.png" alt="tag" className='icons'/>
           <span>Flash Sales</span>
         </div>
         <div>

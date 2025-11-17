@@ -10,7 +10,7 @@ function Ralateditem({ product, onClick }){
           src={product.thumbnail} 
           alt={product.title} 
           className='icons'
-          onError={(e) => e.target.src = '/src/assets/star.png'}
+          onError={(e) => e.target.src = '/star.png'}
         />
       </div>
       <div className='rela-item2'>

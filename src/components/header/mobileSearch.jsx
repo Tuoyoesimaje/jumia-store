@@ -29,7 +29,7 @@ function MobileSearch({ onClose, onSearch }) {
             className="mobile-search-input"
           />
           <button type="submit" className="mobile-search-btn">
-            <img src="/src/assets/magnifier.png" alt="search" className="search-icon-img" />
+            <img src="/magnifier.png" alt="search" className="search-icon-img" />
           </button>
         </form>
       </div>

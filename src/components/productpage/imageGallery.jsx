@@ -7,7 +7,7 @@ function ImageGallery({ image, title }) {
           src={image} 
           alt={title} 
           className="image"
-          onError={(e) => e.target.src = '/src/assets/Screenshot 2025-11-12 003828.png'}
+          onError={(e) => e.target.src = '/star.png'}
         />
       </div>
       <div>

@@ -14,7 +14,7 @@ function Properties({ title, brand, price, discount, rating, reviewCount, stock 
           <span className='storeTag'>Official Store</span>
           <span className='podTag'>Pay On Delivery</span>
         </div>
-        <div className='orangeheart'><img src="/src/assets/heartbold.png" alt="favorite" className='icons'/>
+        <div className='orangeheart'><img src="/heartbold.png" alt="favorite" className='icons'/>
         </div>
       </div>
       {/* Pass title and brand to Productinfo */}
@@ -29,7 +29,7 @@ function Properties({ title, brand, price, discount, rating, reviewCount, stock 
         <RatingStars rating={rating} reviewCount={reviewCount} />
         <div>
           <span className='addtocart-btn'>
-            <img src="/src/assets/cart.png" alt="cart" className='icons' />
+            <img src="/cart.png" alt="cart" className='icons' />
             <span className='inner-btn'>ADD TO CART</span>
           </span>
         </div>

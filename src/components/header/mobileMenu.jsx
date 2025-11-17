@@ -52,7 +52,7 @@ function MobileMenu({ onClose }) {
             </div>
 
             <div className="mobile-menu-item-simple">
-              <img src="/menuheart.png" alt="" className='mobile-icon'/>
+              <img src="/Menuheart.png" alt="" className='mobile-icon'/>
               <span>Wishlist</span>
             </div>
           </div>
@@ -132,27 +132,27 @@ function MobileMenu({ onClose }) {
             </div>
 
             <div className="mobile-menu-item-simple">
-              <img src="/menustar.png" alt="" className='mobile-icon'/>
+              <img src="/Menustar.png" alt="" className='mobile-icon'/>
               <span>J-Force</span>
             </div>
 
             <div className="mobile-menu-item-simple">
-              <img src="/menustar.png" alt="" className='mobile-icon'/>
+              <img src="/Menustar.png" alt="" className='mobile-icon'/>
               <span>Pay Airtime & Bills</span>
             </div>
 
             <div className="mobile-menu-item-simple">
-              <img src="/menustar.png" alt="" className='mobile-icon'/>
+              <img src="/Menustar.png" alt="" className='mobile-icon'/>
               <span>Pay Electricity Bills</span>
             </div>
 
             <div className="mobile-menu-item-simple">
-              <img src="/menustar.png" alt="" className='mobile-icon'/>
+              <img src="/Menustar.png" alt="" className='mobile-icon'/>
               <span>Pay Internet Bills</span>
             </div>
 
             <div className="mobile-menu-item-simple">
-              <img src="/menustar.png" alt="" className='mobile-icon'/>
+              <img src="/Menustar.png" alt="" className='mobile-icon'/>
               <span>Buy Data</span>
             </div>
 

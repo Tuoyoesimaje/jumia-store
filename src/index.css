@@ -1,0 +1,138 @@
+:root {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 300;
+
+
+  color: black;
+  background-color: rgb(235, 234, 234);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+
+span, p{
+  font-size: 12px;
+}
+
+h3{
+  font-weight: 400;
+}
+
+h4{
+  font-weight: 450;
+}
+
+
+button{
+  background-color: rgb(246, 139, 30);
+  border: none;
+  color: #ffffff;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Arial, sans-serif;
+  cursor: pointer;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.linebr{
+  height: 1px;
+  width: 100%;
+  border-radius: 0.4;
+  background-color: rgba(171, 169, 169, 0.2);
+}
+
+.main-body{
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  max-width: 1184px;
+}
+
+
+
+.image{
+  object-fit: cover;
+  width: 300px;
+  align-self: center;
+}
+
+.image-cont{
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-cont{
+  width: 36.5%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-section{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.second-main{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 16px;
+}
+
+.productDescription{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 1184px;
+  margin-top: 20px;
+}
+
+@media (max-width: 800px){
+  .image-cont{
+    width: 100%;
+  }
+  .item-cont{
+    width: 100%;
+  }
+  .image{
+    width: 80%;
+  }
+  .wrapper{
+    padding: 10px 5px;
+  }
+  .main-body{
+    width: 100%;
+  }
+  
+}
+
+@media (max-width: 1000px){
+  .wrapper{
+    padding: 10px 5px;
+    width: 100%;
+  }
+}

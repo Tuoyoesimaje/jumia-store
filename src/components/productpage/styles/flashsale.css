@@ -1,0 +1,26 @@
+.stock-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.stock-text {
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.progress-bar-container {
+  flex: 1;
+  height: 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #ff9900;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}

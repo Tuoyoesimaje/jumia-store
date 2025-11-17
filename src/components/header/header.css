@@ -1,0 +1,134 @@
+.icons{
+  width: 16px;
+  height: auto;
+  object-fit: contain;
+}
+
+.half-star{
+  width: 12.5px;
+  margin-bottom: -0.5px;
+}
+
+.icons2{
+  width: 16px;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(0.5) saturate(1.5) hue-rotate(30deg);
+}
+
+.header-btn-cont{
+  align-items: center;
+  justify-content: start;
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.header-btn-cont:hover {
+  color: rgb(246, 139, 30);
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #ffffff;
+  height: auto;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.05);
+}
+
+.header-left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+.jumia-icons{
+  width: 100px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.header-middle{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px
+}
+
+.header-right{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.center{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.center span{
+  justify-self: center;
+}
+
+.search-bar{
+  width: 300px;
+  padding: 7.5px 5px;
+  border: solid 0.5px;
+  border-radius: 2.5px;
+  border-color: gainsboro;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  background-image: url('src/assets/magnifier.png');
+  background-position: 10px center;
+  padding-left: 35px;
+  background-size: 14px;
+  background-repeat: no-repeat;
+}
+
+.search-bar:focus{
+  outline: none;
+}
+
+.search-btn{
+  padding: 8.2px;
+  border-radius: 3.5px;
+  font-size: 14px;
+}
+
+@media (max-width: 800px){
+  .header-btn-cont span{
+    display: none;
+  }
+
+  .header-middle{
+    display: none;
+  }
+
+  .header-right .help{
+    display: none;
+  }
+
+  .header-right{
+    gap: 10px;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 800px){
+  .header-right .searchmobile{
+    display: none;
+  }
+}
+

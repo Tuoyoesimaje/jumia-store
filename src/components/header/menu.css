@@ -1,0 +1,15 @@
+.menu-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.menu-icon:hover {
+  opacity: 0.8;
+}

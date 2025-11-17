@@ -43,7 +43,7 @@ function Header({ onSearch }) {
 
         <div className='header-right'>
           <div className='header-btn-cont' onClick={() => setShowMobileSearch(true)}>
-            <img src="src/assets/magnifier.png" alt="" className='icons searchmobile'/>
+            <img src="/magnifier.png" alt="" className='icons searchmobile'/>
           </div>
           <div className='header-btn-cont'>
             <img src="https://cdn-icons-png.flaticon.com/512/1250/1250740.png" alt="" className='icons'/>

@@ -90,7 +90,7 @@
   border-color: gainsboro;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
-  background-image: url('src/assets/magnifier.png');
+  background-image: url('/magnifier.png');
   background-position: 10px center;
   padding-left: 35px;
   background-size: 14px;

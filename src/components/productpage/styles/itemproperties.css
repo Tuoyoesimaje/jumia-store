@@ -139,6 +139,10 @@
   cursor: pointer;
 }
 
+.addtocart-btn:hover{
+  background-color: rgb(220, 125, 25);
+}
+
 .addtocart-btn2{
   display: flex;
   background-color: rgb(246, 139, 30);
@@ -148,8 +152,14 @@
   align-items: center;
   width: 100%;
   gap: 10px;
-  
+  cursor: pointer;
 }
+
+.addtocart-btn2:hover{
+  background-color: rgb(220, 125, 25);
+}
+
+
 
 .action-buttons-mobile{
   display: flex;
@@ -242,6 +252,9 @@
   cursor: pointer;
 }
 
+.socials:hover{
+  filter: invert(61%) sepia(85%) saturate(2250%) hue-rotate(352deg) brightness(97%) contrast(97%);
+}
 
 @media (max-width: 1000px){
   .main-body{

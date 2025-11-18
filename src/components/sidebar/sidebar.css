@@ -36,6 +36,11 @@
   padding: 5px 10px;
   border-radius: 4px;
   margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.rela-btn:hover{
+  background-color: rgb(220, 125, 25);
 }
 
 .rela-category{

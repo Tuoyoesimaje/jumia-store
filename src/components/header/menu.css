@@ -4,6 +4,10 @@
   cursor: pointer;
 }
 
+.menu-icon:hover{
+  filter: invert(61%) sepia(85%) saturate(2250%) hue-rotate(352deg) brightness(97%) contrast(97%);
+}
+
 .menu-icon {
   display: flex;
   align-items: center;

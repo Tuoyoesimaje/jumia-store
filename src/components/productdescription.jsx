@@ -8,6 +8,7 @@ function ProductDescription({ description }) {
       <p>
         {description}
       </p>
+      <span className="report">Report this product</span>
     </div>
   )
 }

@@ -110,6 +110,19 @@ a{
   gap: 10px;
   max-width: 1184px;
   margin-top: 20px;
+  position: relative;
+}
+
+.report{
+  color: rgb(38, 73, 150);
+  cursor: pointer;
+  position: relative;
+  bottom: -25px;
+  margin-top: 50px;
+}
+
+.report:hover{
+  text-decoration: underline;
 }
 
 @media (max-width: 800px){
@@ -127,6 +140,11 @@ a{
   }
   .main-body{
     width: 100%;
+  }
+
+  .report{
+    margin-top: 20px;
+    bottom: 0;
   }
   
 }

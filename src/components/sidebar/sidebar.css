@@ -117,15 +117,15 @@
   }
 }
 
-@media  (max-width: 768px){
+@media  (max-width: 800px){
   .relatedlist-container{
-     width: 96.5%;
+     width: 96.3%;
   }
 }
 
 @media (max-width: 640px){
   .relatedlist-container{
-     width: 96%;
+     width: 95.9%;
   }
 }
 
@@ -134,3 +134,5 @@
      width: 95%;
   }
 }
+
+

@@ -117,4 +117,8 @@
   }
 }
 
-
+@media (max-width: 520px){
+  .relatedlist-container{
+     width: 95%;
+  }
+}

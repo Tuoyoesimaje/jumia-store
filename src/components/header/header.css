@@ -127,6 +127,7 @@
   .arrow-icons{
     display: none;
   }
+ 
 }
 
 @media (min-width: 800px){
@@ -135,3 +136,26 @@
   }
 }
 
+@media (max-width: 900px){
+  .header{
+
+  }
+
+  .header-left{
+    gap: 10px;
+  }
+
+  .jumia-icons{
+    width: 90px;
+  }
+
+  .search-bar{
+    width: 250px;
+  }
+  .search-btn{
+    padding: 8.2px;
+    border-radius: 3.5px;
+    font-size: 14px;
+  }
+  
+}

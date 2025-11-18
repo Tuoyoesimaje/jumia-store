@@ -28,8 +28,17 @@ function Properties({ title, brand, price, discount, rating, reviewCount, stock 
         {/* Pass rating and reviewCount to RatingStars */}
         <RatingStars rating={rating} reviewCount={reviewCount} />
         <div>
+          <div className='action-buttons-mobile'>
+            <span className='call-btn'>
+              <img src="/call.png" alt="call" className='icons' />
+            </span>
+            <span className='addtocart-btn2'>
+              <img src="/cart.png" alt="cart" className='icons cart-btn' />
+              <span className='inner-btn'>ADD TO CART</span>
+            </span>
+          </div>
           <span className='addtocart-btn'>
-            <img src="/cart.png" alt="cart" className='icons' />
+            <img src="/cart.png" alt="cart" className='icons cart-btn' />
             <span className='inner-btn'>ADD TO CART</span>
           </span>
         </div>

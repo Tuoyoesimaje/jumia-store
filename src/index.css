@@ -144,7 +144,6 @@ a{
 
   .report{
     margin-top: 20px;
-    bottom: 0;
   }
   
 }
@@ -153,5 +152,9 @@ a{
   .wrapper{
     padding: 10px 5px;
     width: 100%;
+  }
+  .report{
+    margin-top: 30px;
+    bottom: 0;
   }
 }

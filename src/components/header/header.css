@@ -137,10 +137,6 @@
 }
 
 @media (max-width: 900px){
-  .header{
-
-  }
-
   .header-left{
     gap: 10px;
   }
@@ -157,5 +153,5 @@
     border-radius: 3.5px;
     font-size: 14px;
   }
-  
+
 }

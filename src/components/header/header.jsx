@@ -48,14 +48,17 @@ function Header({ onSearch }) {
           <div className='header-btn-cont'>
             <img src="https://cdn-icons-png.flaticon.com/512/1250/1250740.png" alt="" className='icons'/>
             <span>Hi, Tuoyo</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/2722/2722987.png" alt="" className='icons arrow-icons'/>
           </div>
-          <div className='header-btn-cont'>
+          <div className='header-btn-cont help'>
             <img src="https://cdn-icons-png.flaticon.com/512/2984/2984971.png" alt="" className='icons help'/>
             <span>Help</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/2722/2722987.png" alt="" className='icons arrow-icons'/>
           </div>
           <div className='header-btn-cont'>
             <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="" className='icons'/>
             <span>Cart</span>
+            <img src="https://cdn-icons-png.flaticon.com/512/2722/2722987.png" alt="" className='icons arrow-icons'/>
           </div>
         </div>
       </header>

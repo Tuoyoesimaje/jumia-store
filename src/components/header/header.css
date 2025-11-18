@@ -121,8 +121,11 @@
   }
 
   .header-right{
-    gap: 10px;
-    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .arrow-icons{
+    display: none;
   }
 }
 

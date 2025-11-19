@@ -16,7 +16,9 @@ function MobileSearch({ onClose, onSearch }) {
     <div className="mobile-search-overlay">
       <div className="mobile-search-header">
         <button className="back-btn" onClick={onClose}>
-          ←
+          <span>
+            ←
+          </span>
         </button>
 
         <form onSubmit={handleSubmit} className="mobile-search-form">

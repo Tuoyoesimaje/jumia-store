@@ -21,7 +21,7 @@
 .mobile-search-header {
   display: flex;
   align-items: center;
-  padding: 15px;
+  padding: 10px;
   gap: 10px;
   border-bottom: 1px solid #e0e0e0;
   background-color: white;
@@ -31,18 +31,26 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   font-size: 24px;
   color: #333;
+  display: flex;
+  justify-content: center;
 }
+
+.back-btn span{
+  font-size: 24px;
+  margin-top: -7px;
+}
+
 
 .mobile-search-form {
   flex: 1;
   display: flex;
   align-items: center;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   border-radius: 4px;
   padding: 0 10px;
 }
@@ -65,9 +73,11 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 5px;
+  padding: 5px 8px;
+  padding-left: 15px;
   display: flex;
   align-items: center;
+  border-left: rgb(51, 51, 51, 0.5) solid 1px;
 }
 
 /* Hide on desktop */

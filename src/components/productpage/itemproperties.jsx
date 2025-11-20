@@ -4,7 +4,7 @@ import RatingStars from './Ratingstars'
 import Promotion from './promotion'
 import './styles/itemproperties.css'
 
-// This component receives all product data and passes it to child components
+// This component collects all the product info from the parent and distributes it to the child components
 function Properties({ title, brand, price, discount, rating, reviewCount, stock }){
 
   return(
@@ -17,15 +17,15 @@ function Properties({ title, brand, price, discount, rating, reviewCount, stock 
         <div className='orangeheart'><img src="/heartbold.png" alt="favorite" className='icons'/>
         </div>
       </div>
-      {/* Pass title and brand to Productinfo */}
+      {/* Passing the title and brand to Productinfo for display */}
       <Productinfo title={title} brand={brand} />
-      {/* Pass price, discount, and stock to FlashSaleTimer */}
+      {/* FlashSaleTimer needs the price, discount and stock for its calculations */}
       <FlashSaleTimer price={price} discount={discount} stock={stock} />
       <div>
         <div>
           <span>+ shipping from ₦ 1,100 to Warri</span>
         </div>
-        {/* Pass rating and reviewCount to RatingStars */}
+        {/* RatingStars displays the star rating and number of reviews */}
         <RatingStars rating={rating} reviewCount={reviewCount} />
         <div>
           <div className='action-buttons-mobile'>

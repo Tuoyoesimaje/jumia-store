@@ -7,36 +7,36 @@ import ProductDescription from "./components/productdescription.jsx";
 import Loading from "./components/Loading.jsx";
 
 function Mainpage({ searchQuery }) {
-  const [productId, setProductId] = useState(123); // iPhone 13 Pro - smartphones category
+  const [productId, setProductId] = useState(123); // Starting with iPhone 13 Pro - it's in the smartphones category
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // when user searches, find best matching product
+  // Whenever someone searches, I need to find the product that matches best
   useEffect(() => {
     if (searchQuery) {
       setLoading(true);
       
-      // search products
+      // First, let me search for products
       fetch(`https://dummyjson.com/products/search?q=${searchQuery}`)
         .then(response => response.json())
         .then(data => {
           if (data.products && data.products.length > 0) {
-            // sort results by relevance - title matches first
+            // Sort these results by relevance - exact title matches should appear first
             const sorted = data.products.sort((a, b) => {
               const aTitle = a.title.toLowerCase();
               const bTitle = b.title.toLowerCase();
               const query = searchQuery.toLowerCase();
               
-              // exact title match gets highest priority
+              // Exact title match gets highest priority
               if (aTitle === query) return -1;
               if (bTitle === query) return 1;
               
-              // title starts with query gets second priority
+              // Title starting with the search query gets second priority
               if (aTitle.startsWith(query)) return -1;
               if (bTitle.startsWith(query)) return 1;
               
-              // title contains query gets third priority
+              // Title containing the query anywhere gets third priority
               if (aTitle.includes(query) && !bTitle.includes(query)) return -1;
               if (bTitle.includes(query) && !aTitle.includes(query)) return 1;
               
@@ -47,7 +47,7 @@ function Mainpage({ searchQuery }) {
             console.log('Best match:', bestMatch.title);
             setProductId(bestMatch.id);
           } else {
-            // no results, try category search
+            // No results found. Let me try searching by category instead
             fetch(`https://dummyjson.com/products/category/${searchQuery}?limit=10`)
               .then(response => response.json())
               .then(data => {
@@ -70,7 +70,7 @@ function Mainpage({ searchQuery }) {
     }
   }, [searchQuery]);
 
-  // this runs whenever productId changes
+  // This runs whenever the productId changes - fetches new product details
   useEffect(() => {
     setLoading(true);
     

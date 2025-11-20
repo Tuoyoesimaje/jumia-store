@@ -1,5 +1,5 @@
-// converting USD prices to Naira
-// API gives prices in dollars, we need naira
+// The API gives prices in dollars but we need naira here
+// Simple conversion utility
 
 const USD_TO_NGN = 1600;
 

@@ -4,13 +4,13 @@ import './styles/flashsale.css';
 
 function FlashSaleTimer({ price, discount, stock }){
   
-  // random time between 1-12 hours when component loads
+  // Generate a random time between 1-12 hours when this loads. Makes it feel more realistic since it's different each time
   const [timeLeft, setTimeLeft] = useState(() => {
     const randomHours = Math.floor(Math.random() * 12) + 1;
-    return randomHours * 3600; // convert to seconds
+    return randomHours * 3600; // Converting to seconds
   });
 
-  // countdown every second
+  // Countdown timer that runs every second
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(prev => {
@@ -22,22 +22,22 @@ function FlashSaleTimer({ price, discount, stock }){
     return () => clearInterval(timer);
   }, []);
 
-  // format time as hours:minutes:seconds
+  // Format the time properly - hours:minutes:seconds
   const hours = Math.floor(timeLeft / 3600);
   const minutes = Math.floor((timeLeft % 3600) / 60);
   const seconds = timeLeft % 60;
   
-  // converting USD to naira
+  // Convert the dollar price to naira since we're working with Nigerian currency here
   const nairaPrice = convertToNaira(price);
   
-  // figuring out what the original price was before discount
+  // If there's a discount, I need to calculate what the original price was before it was slashed
   let originalNairaPrice = null;
   if (discount && discount > 0) {
     originalNairaPrice = nairaPrice / (1 - discount / 100);
     originalNairaPrice = Math.round(originalNairaPrice);
   }
 
-  // for the progress bar - assuming max stock is 100
+  // For the progress bar - assuming max stock is 100. Can adjust this later if needed
   const maxStock = 100;
   const stockPercentage = Math.min((stock / maxStock) * 100, 100);
 

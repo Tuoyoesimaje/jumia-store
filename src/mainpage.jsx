@@ -11,11 +11,15 @@ function Mainpage({ searchQuery }) {
   const [product, setProduct] = useState(null);
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  // Array to store all fetched products with full details - prevents redundant API calls
+  const [allProducts, setAllProducts] = useState([]);
 
   // Whenever someone searches, I need to find the product that matches best
   useEffect(() => {
     if (searchQuery) {
       setLoading(true);
+      // Clear products array on new search to fetch fresh data
+      setAllProducts([]);
       
       // First, let me search for products
       fetch(`https://dummyjson.com/products/search?q=${searchQuery}`)
@@ -70,36 +74,74 @@ function Mainpage({ searchQuery }) {
     }
   }, [searchQuery]);
 
-  // This runs whenever the productId changes - fetches new product details
+  // This runs whenever the productId changes
   useEffect(() => {
+    // Check if product is already in our array
+    const cachedProduct = allProducts.find(p => p.id === productId);
+    
+    if (cachedProduct) {
+      console.log('Using cached data for product:', productId);
+      setProduct(cachedProduct);
+      
+      // Get related products from the same category that are already in our array
+      const related = allProducts.filter(p => 
+        p.category === cachedProduct.category && p.id !== productId
+      ).slice(0, 5);
+      
+      setRelatedProducts(related);
+      setLoading(false);
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    // If not in array, fetch it
     setLoading(true);
     
     fetch(`https://dummyjson.com/products/${productId}`)
       .then(response => response.json())
-      .then(data => {
-        setProduct(data);
-        localStorage.setItem(`product_${productId}`, JSON.stringify(data));
+      .then(mainProduct => {
+        setProduct(mainProduct);
         
-        return fetch(`https://dummyjson.com/products/category/${data.category}?limit=10`);
-      })
-      .then(response => response.json())
-      .then(data => {
-        const filtered = data.products.filter(p => p.id !== Number(productId));
-        setRelatedProducts(filtered.slice(0, 5));
-        localStorage.setItem(`related_${productId}`, JSON.stringify(filtered.slice(0, 5)));
-        setLoading(false);
+        // Fetch related products from the same category
+        return fetch(`https://dummyjson.com/products/category/${mainProduct.category}?limit=10`)
+          .then(response => response.json())
+          .then(data => {
+            const filtered = data.products.filter(p => p.id !== Number(productId));
+            const relatedItems = filtered.slice(0, 5);
+            
+            // Now fetch FULL DETAILS for each related product
+            const detailPromises = relatedItems.map(item => 
+              fetch(`https://dummyjson.com/products/${item.id}`)
+                .then(res => res.json())
+            );
+            
+            return Promise.all(detailPromises).then(detailedProducts => {
+              // Add all products to our array (main + related)
+              const newProducts = [mainProduct, ...detailedProducts];
+              
+              // Merge with existing products, avoiding duplicates
+              setAllProducts(prevProducts => {
+                const combined = [...prevProducts, ...newProducts];
+                // Remove duplicates by id
+                const unique = combined.filter((product, index, self) =>
+                  index === self.findIndex(p => p.id === product.id)
+                );
+                console.log('Total products stored:', unique.length);
+                return unique;
+              });
+              
+              setRelatedProducts(detailedProducts);
+              setLoading(false);
+            });
+          });
       })
       .catch(error => {
         console.log('Error fetching data:', error);
-        const cached = localStorage.getItem(`product_${productId}`);
-        const cachedRelated = localStorage.getItem(`related_${productId}`);
-        if (cached) setProduct(JSON.parse(cached));
-        if (cachedRelated) setRelatedProducts(JSON.parse(cachedRelated));
         setLoading(false);
       });
 
     window.scrollTo(0, 0);
-  }, [productId]);
+  }, [productId, allProducts]);
 
   function handleProductClick(id) {
     setProductId(id);
